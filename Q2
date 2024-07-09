@@ -1,0 +1,48 @@
+/* 
+ * File:   main.cpp
+ * Author: Mario Victorino
+ * Created on July 9, 2024, 1:00 PM
+ * Purpose:  
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+const char CVPNDLRS = 100;  //conversion from Pennies to Dollars
+//Function Prototypes
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    unsigned int payPDay;   //Pay Per payPDay in pennies
+    unsigned int paySum;    //Total paySum
+    
+    //unsigned char nDays;     //Number of days
+    int nDays;
+    
+    //Initialize or input i.e. set variable values
+    payPDay = 1;    //1 Penny
+    paySum = 1;
+    
+    //nDays = 3;
+    cin >> nDays;
+    
+    //Map inputs -> outputs
+    for(int day = 2; day <= nDays; day++){
+        payPDay *= 2;
+        paySum += payPDay;
+    }
+    
+    //Display the outputs
+    //cout << "Your pay for " << static_cast<int>(nDays) << " days of work = $" << paySum/CVPNDLRS << "." << (paySum%CVPNDLRS < 10 ? "0":"") << paySum%CVPNDLRS << endl;
+    cout << "Pay = $" << paySum/CVPNDLRS << "." << (paySum%CVPNDLRS < 10 ? "0":"") << paySum%CVPNDLRS;
+    //Exit stage right or left!
+    return 0;
+}
