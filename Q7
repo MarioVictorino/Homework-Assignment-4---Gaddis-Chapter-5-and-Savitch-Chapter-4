@@ -1,0 +1,114 @@
+/* 
+ * File:   
+ * Author: 
+ * Created on 
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+const float LPG = 0.264179;
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+void calc();
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    char y;
+    
+    bool quit;
+    
+    int counter;
+    //Initialize or input i.e. set variable values
+    quit = true;
+    y = 'y';
+    
+    counter = 0;
+    
+    //Map inputs -> outputs
+    do{
+        calc();
+        counter++;
+        cout << "Again:" << endl;
+        if(counter == 1){
+        cout << endl;
+    }
+    
+        cin >> y;
+        
+        if (y == 'n'){
+            quit = false;
+        }
+        
+    }while(quit);
+    //Display the outputs
+
+    //Exit stage right or left!
+    return 0;
+}
+
+void calc(){
+    
+    int litUsed;  //liters of gas used
+    float mpg;      //miles per gallon
+    float temp;
+    int mTrav;      //miles travled
+    
+    int litUsed2;
+    float mpg2;
+    int mTrav2;
+    float temp2;
+    
+    
+    litUsed = 0;
+    mTrav = 0;
+    temp = 0;
+    
+    litUsed2 = 0;
+    mTrav2 = 0;
+    temp2 = 0;
+    
+    //FIRST CAR
+    cout << "Car 1" << endl;
+    cout << "Enter number of liters of gasoline:" << endl;
+    cout << "Enter number of miles traveled:" << endl;
+    cin >> litUsed;
+    cin >> mTrav;
+    
+    temp = litUsed*LPG;
+    mpg = mTrav/temp;
+    
+    cout << setprecision(2) << fixed << showpoint;
+    cout << "miles per gallon: " << mpg << endl << endl;
+    
+    //SECOND CAR
+    cout << "Car 2" << endl;
+    cout << "Enter number of liters of gasoline:" << endl;
+    cout << "Enter number of miles traveled:" << endl;
+    cin >> litUsed2;
+    cin >> mTrav2;
+    
+    temp2 = litUsed2*LPG;
+    mpg2 = mTrav2/temp2;
+    
+    cout << setprecision(2) << fixed << showpoint;
+    cout << "miles per gallon: " << mpg2 << endl << endl;
+    
+    if (mpg > mpg2){
+        cout << "Car 1 is more fuel efficient" << endl << endl;
+    } else {
+        cout << "Car 2 is more fuel efficient" << endl << endl;
+    }
+};
