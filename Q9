@@ -1,0 +1,87 @@
+/* 
+ * File:   
+ * Author: Mario Victorino
+ * Created on July 7, 2024, 2:00 PM
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <iomanip>
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+void inf();
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    bool quit;
+    
+    char y;
+    
+    unsigned short int counter;
+    //Initialize or input i.e. set variable values
+    quit = true;
+    
+    y = 'y';
+    
+    counter = 0;
+    
+    //Map inputs -> outputs
+    do{
+        
+        inf();
+        counter++;
+        
+        cout << "Again:" << endl;
+        if(counter == 1){
+        cout << endl;
+    }
+        
+        cin >> y;
+        
+        if(y == 'n'){
+            quit = false;
+        }
+    }while(quit);
+    //Display the outputs
+
+    //Exit stage right or left!
+    return 0;
+}
+
+void inf(){
+    float oldP;
+    float newP;
+    float rate;
+    float temp;
+    
+    float oneY;     //one year prediction
+    float twoY;     //two year prediction
+    
+    cout << "Enter current price:" << endl;
+    cin >> newP;
+    cout << "Enter year-ago price:" << endl;
+    cin >> oldP;
+    
+    temp = newP - oldP;
+    rate = (temp/oldP)*100;
+    
+    cout << setprecision(2) << fixed << showpoint;
+    cout << "Inflation rate: " << rate << "%" << endl << endl;
+    
+    
+    oneY = (rate/100)*newP + newP;
+    twoY = (rate/100)*oneY + oneY;
+    
+    cout << "Price in one year: $" << oneY << endl;
+    cout << "Price in two year: $" << twoY << endl << endl;
+};
