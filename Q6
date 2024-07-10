@@ -1,0 +1,93 @@
+/* 
+ * File:   
+ * Author: 
+ * Created on 
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+const float LPG = 0.264179;
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+void calc();
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    char y;
+    
+    bool quit;
+    
+    int counter;
+    //Initialize or input i.e. set variable values
+    quit = true;
+    y = 'y';
+    
+    
+    
+    counter = 0;
+    
+    //Map inputs -> outputs
+    do{
+        calc();
+        counter++;
+        cout << "Again:" << endl;
+        if(counter == 1){
+        cout << endl;
+    }
+    
+        cin >> y;
+        
+        
+        
+        if (y == 'n'){
+            quit = false;
+        }
+        
+    }while(quit);
+    //Display the outputs
+
+    //Exit stage right or left!
+    return 0;
+}
+
+void calc(){
+    
+    int litUsed;  //liters of gas used
+    float mpg;      //miles per gallon
+    float temp;
+    int mTrav;      //miles travled
+    
+    
+    litUsed = 0;
+    mTrav = 0;
+    temp = 0;
+    
+    
+    
+    cout << "Enter number of liters of gasoline:" << endl << endl;
+    cin >> litUsed;
+    cout << "Enter number of miles traveled:" << endl << endl;
+    cin >> mTrav;
+    
+    
+    temp = litUsed*LPG;
+    mpg = mTrav/temp;
+    
+    cout << setprecision(2) << fixed << showpoint;
+    cout << "miles per gallon:" << endl << mpg << endl;
+    //cout << "Again:" << endl;
+    
+};
