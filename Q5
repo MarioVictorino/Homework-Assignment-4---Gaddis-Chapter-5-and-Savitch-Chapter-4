@@ -1,0 +1,63 @@
+/* 
+ * File:   main.cpp
+ * Author: Mario Victorino
+ * Created on July 9, 2:54 PM
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <cstring>
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    string x;
+    
+    unsigned int counter;
+    unsigned int y;
+    
+    //Initialize or input i.e. set variable values
+    cin >> counter;
+    y = 1;
+    x = "+";
+    
+    //Map inputs -> outputs
+    if (counter == 10){
+        for (int i = 1; i < counter; i++){
+        cout << x << endl << endl;
+        x += "+";
+        //cout << endl;
+        y++;
+        if (y == 10){
+            //cout << y;
+            //x.pop_back();
+            cout << x << endl << endl;
+            //cout << y;
+        }
+    }
+    
+    
+    for (int i = 19; counter < i; i--){
+        cout << x << endl << endl;
+        x.pop_back();
+        //cout << endl;
+    }
+    
+    cout << x;
+    }
+        
+    //Display the outputs
+
+    //Exit stage right or left!
+    return 0;
+}
