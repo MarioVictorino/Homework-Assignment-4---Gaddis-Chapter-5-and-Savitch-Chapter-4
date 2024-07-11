@@ -1,0 +1,53 @@
+/* 
+ * File:   main.cpp
+ * Author: Mario Victorino
+ * Created on July 11, 2024, 9:00 AM
+ * Purpose:  
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    int x;
+    int input;
+    int min;
+    int max;
+    
+    //Initialize or input i.e. set variable values
+    min = 100;
+    x = 0;
+    max = 0;
+    
+    //Map inputs -> outputs
+    
+    while(input != -99){
+        cin >> input;
+            x = input;
+        
+            if (x < min && x > -1){
+                min = x;
+            }
+            if (x > max){
+                max = x;
+            }
+    }
+    //Display the outputs
+    cout << "Smallest number in the series is " << min << endl;
+    cout << "Largest  number in the series is " << max;
+    //Exit stage right or left!
+    return 0;
+}
