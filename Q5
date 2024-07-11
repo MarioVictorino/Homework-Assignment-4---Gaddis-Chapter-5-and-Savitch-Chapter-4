@@ -32,30 +32,31 @@ int main(int argc, char** argv) {
     x = "+";
     
     //Map inputs -> outputs
-    if (counter == 10){
-        for (int i = 1; i < counter; i++){
-        cout << x << endl << endl;
-        x += "+";
-        //cout << endl;
-        y++;
-        if (y == 10){
-            //cout << y;
-            //x.pop_back();
+    
+    for(int i = 0; i <= counter; i++){
+        if (i < counter){
             cout << x << endl << endl;
-            //cout << y;
+            if (i < counter - 1){
+                x+= "+";
+            }
         }
-    }
-    
-    
-    for (int i = 19; counter < i; i--){
-        cout << x << endl << endl;
-        x.pop_back();
-        //cout << endl;
-    }
-    
-    cout << x;
-    }
         
+        if (i == counter){
+            for (int i = counter*2; counter < i; i--){
+                //cout << x;
+                if(counter < i){
+                    cout << x;
+                }
+                x.pop_back();
+                //cout << endl;
+                if(counter < i - 1){
+                    cout << endl << endl;
+                }
+            }
+        }
+        
+    }
+    
     //Display the outputs
 
     //Exit stage right or left!
